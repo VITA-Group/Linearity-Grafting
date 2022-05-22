@@ -1,0 +1,13 @@
+CUDA_VISIBLE_DEVICES=0 python -u train.py \
+    --dataset cifar10 \
+    --arch cifar_cnn_b \
+    --seed 1 \
+    --save_dir Train_FAT_cifar_cnn_b_seed1_2_255 \
+    --train_eps 0.007843137255 \
+    --train_alpha 0.009803921569 \
+    --test_eps 0.007843137255 \
+    --test_alpha 0.009803921569 \
+    --lr 0.1 \
+    --warmup 0 \
+    --grad_align_cos_lambda 0.2 \
+    --batch_size 128

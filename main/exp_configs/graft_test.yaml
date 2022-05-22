@@ -1,0 +1,30 @@
+general:
+  mode: verified-acc
+  output_name: None
+model:
+  name: None
+  path: None
+data:
+  dataset: CIFAR_Test
+  std: [0.2023, 0.1994, 0.2010]
+  mean: [0.4914, 0.4822, 0.4465]
+  start: 0
+  end: 10000
+attack:
+  pgd_restarts: 100
+specification:
+  epsilon: 0.00784313725490196  # 2/255.
+solver:
+  beta-crown:
+    batch_size: 512
+    iteration: 20
+  mip:
+    parallel_solvers: 2
+    solver_threads: 16
+bab:
+  timeout: 300
+  max_domains: 5000000
+  branching:
+    method: kfsb_grafting
+    reduceop: min
+    candidates: 3
